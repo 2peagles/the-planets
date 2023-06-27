@@ -1,0 +1,44 @@
+:root{
+  --white:#fff;
+  --darkblue:#070724;
+  --turqoist:#1EC1A2;
+  --blue:#2D68F0;
+  --midnightblue:#38384F;
+  --lightblue:#419EBB;
+  --purple:#6D2ED5;
+  --gray:#838391;
+  --organge:#CD5120;
+  --burnorgange:#D14C32;
+  --red:#D83A34;
+  --yellow:#EDA249;
+  --antoniofont: font-family: 'Antonio', sans-serif;
+  --spartan:'League Spartan', sans-serif;
+}
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+main{
+  color:var(--white);
+  min-height: 100dvh;
+  background-color: var(--darkblue);
+  background-image: url('/img/background-stars.svg');
+}
+/* mobile menu */
+.hidden{
+  display: none;
+}
+/* mobile menu */
+
+
+@media (width > 600px) {
+  /* mobile menu */
+  .mobile{
+    display: none;
+  }
+  .hidden{
+    display: block;
+  }
+  /* mobile menu */
+}
