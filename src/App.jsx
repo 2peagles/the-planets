@@ -7,11 +7,10 @@ function App() {
   const handleClick = () =>setMenu(!menu);
   return (
     <main className='app'>
-
-        <Tab.Container className='' defaultActiveKey='first'>
+        <Tab.Container  defaultActiveKey='first'>
           <Nav>
             <Nav.Item> <Nav.Link>the planets</Nav.Link></Nav.Item>
-             <Nav.Item><Nav.Link eventKey="home" className={!menu ? 'hidden' : 'visible'}>Mercury</Nav.Link> </Nav.Item>
+             <Nav.Item ><Nav.Link eventKey="home" className={!menu ? 'hidden' : 'visible'}>Mercury</Nav.Link> </Nav.Item>
              <Nav.Item><Nav.Link eventKey="venus" className={!menu ? 'hidden' : 'visible'}>Venus</Nav.Link></Nav.Item>
              <Nav.Item><Nav.Link eventKey="earth"className={!menu ? 'hidden' : 'visible'}>Earth</Nav.Link> </Nav.Item>
              <Nav.Item><Nav.Link eventKey="mars"className={!menu ? 'hidden' : 'visible'}>Mars</Nav.Link></Nav.Item>
@@ -29,7 +28,24 @@ function App() {
           <Tab.Content>
             <Tab.Pane eventKey='home' className='grid planetimgs'>planet img  </Tab.Pane>
             <Tab.Pane eventKey='home' className='grid secondarynav'>planet nav</Tab.Pane>
-            <Tab.Pane eventKey='home' className='grid planetfacts'>planet facts</Tab.Pane>
+            <Tab.Pane eventKey='home' className='grid planetfacts'>
+              <div>
+                <span>ROTATION TIME</span>
+                <p>58.6 days</p>
+              </div>
+              <div>
+                <span>ROTATION TIME</span>
+                <p>58.6 days</p>
+              </div>
+              <div>
+                <span>ROTATION TIME</span>
+                <p>58.6 days</p>
+              </div>
+              <div>
+                <span>ROTATION TIME</span>
+                <p>58.6 days</p>
+              </div>
+            </Tab.Pane>
 
             <Tab.Pane eventKey='venus' className='grid planetimgs'>planet img v</Tab.Pane>
             <Tab.Pane eventKey='venus' className='grid secondarynav'>planet nav</Tab.Pane>
@@ -59,7 +75,7 @@ function App() {
             <Tab.Pane eventKey='neptune' className='grid secondarynav'>planet nav</Tab.Pane>
             <Tab.Pane eventKey='neptune' className='grid planetfacts'>planet facts</Tab.Pane>
           </Tab.Content>
-      </Tab.Container>
+       </Tab.Container>
     </main>
   )
 }
