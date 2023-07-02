@@ -10,9 +10,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-/* .nav-link{
-  color:#fff;
+html, body{
+  overflow-x: hidden;
 }
-.nav-link:hover{
-  color: #DEF4FC;
-} */
