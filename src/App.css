@@ -53,6 +53,7 @@ main, body{
 }
 .nav-item{
   color: #FFF;
+  opacity: 0.75;
   font-size: 1rem;
   font-family: var(--spartan);
   font-weight: 700;
