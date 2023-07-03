@@ -8,18 +8,11 @@ function App() {
   const handleClick = () =>setMenu(!menu);
   return (
     <main className='app'>
-        <Tab.Container  defaultActiveKey='first'>
+        <Tab.Container  defaultActiveKey='Mercury'>
           <Nav>
-            <Nav.Item> <Nav.Link>the planets</Nav.Link></Nav.Item>
+            <Nav.Item id='logo'> <Nav.Link>the planets</Nav.Link></Nav.Item>
             <div className={!menu ? 'hidden' : 'visible'}>
-             <Nav.Item className='mobilenavone'><Nav.Link eventKey="home" >Mercury</Nav.Link> </Nav.Item>
-             {/* <Nav.Item><Nav.Link eventKey="venus" >Venus</Nav.Link></Nav.Item>
-             <Nav.Item><Nav.Link eventKey="earth">Earth</Nav.Link> </Nav.Item>
-             <Nav.Item><Nav.Link eventKey="mars">Mars</Nav.Link></Nav.Item>
-             <Nav.Item><Nav.Link eventKey="jupiter">Jupiter</Nav.Link> </Nav.Item>
-             <Nav.Item><Nav.Link eventKey="saturn">Saturn</Nav.Link></Nav.Item>
-             <Nav.Item><Nav.Link eventKey="uranus">Uranus</Nav.Link> </Nav.Item>
-             <Nav.Item><Nav.Link eventKey="neptune">Neptune</Nav.Link></Nav.Item> */}
+
               {planetData.map((planet, index) => (
               <Nav.Item  key={index}>
                 <Nav.Link eventKey={planet.name}>{planet.name}</Nav.Link>
@@ -36,7 +29,7 @@ function App() {
           <Tab.Content>
               {planetData.map((planet, index) => (
             <React.Fragment key={index}>
-            <Tab.Pane eventKey={planet.name} className='grid planetimgs'>
+            <Tab.Pane eventKey={planet.name} className=' planetimgs'>
                <Carousel slide={false} className='mercuryslider'>
                 <Carousel.Item className='sliderimgcontainer'>
                  <img  className="carouselimg" src={planet.images[0].src} alt="First slide"/>
@@ -52,15 +45,14 @@ function App() {
               </Carousel.Item>
             </Carousel>
             </Tab.Pane>
-            <Tab.Pane eventKey={planet.name} className='grid sliderinfo'>
+            <Tab.Pane eventKey={planet.name} className='sliderinfo'>
               <div>
-                  <span>Mercury</span>
+                  <span>{planet.name}</span>
                   <p>{planet.description}</p>
-                  {/* <p>Mercury appears to have a solid silicate crust and mantle overlying a solid, iron sulfide outer core layer, a deeper liquid core layer, and a solid inner core. The planet's density is the second highest in the Solar System at 5.427 g/cm3 , only slightly less than Earth's density.</p> */}
-                  <p>Source : Wikipedia </p>
+                  <p>Source: Wikipedia <img src='/img/icon-source.svg' alt='wikipedia site'/></p>
               </div>
             </Tab.Pane>
-            <Tab.Pane eventKey={planet.name} className='grid planetfacts'>
+            <Tab.Pane eventKey={planet.name} className='planetfacts'>
                 {planet.facts.map((fact, idx) => (
                   <div key={idx}>
                     <span>{fact.label}</span>

@@ -41,11 +41,11 @@ main, body{
 .nav{
   display: block;
 }
-.nav-item:first-of-type:not(.mobilenavone){
+#logo{
   margin-right:auto;
   color: #FFF;
   font-size: 1.75rem;
-  font-family: Antonio;
+  font-family:var(--antoniofont);
   letter-spacing: -0.06563rem;
   border-top:none;
   width:100%;
@@ -78,9 +78,6 @@ main, body{
 .nav-link:focus{
   color:#fff;
 }
-.mobilenavone{
-  border-top:none;
-}
 .nav-item::before{
 content: '';
 width: 1.25rem;
@@ -90,14 +87,14 @@ position: relative;
 top:1.7rem;
 left:-1.5rem;
 }
-.mobilenavone:before{
+.nav-item:nth-child(1){
+  border-top:none;
+}
+.nav-item:nth-child(1):not(#logo):before{
   background: #DEF4FC;
 }
-.nav-item:nth-child(2):before{
-  background: #F7CC7F;
-}
-.nav-link:nth-child(2):hover {
-  color: #F7CC7F;
+.nav-item:nth-child(2):before {
+  background-color: #F7CC7F;
 }
 .nav-item:nth-child(3):before {
     background: #545BFE;
@@ -197,6 +194,7 @@ top:-3rem;
     font-family:var(--spartan);
     line-height: 1.5625rem;
 }
+
 .planetfacts div {
    display: flex;
    align-items: center;
@@ -232,6 +230,7 @@ top:-3rem;
     outline:5px solid green;
   }
 } */
+
 @media (width > 800px) {
   /* mobile menu */
   .mobile{
@@ -250,18 +249,18 @@ top:-3rem;
       align-items: center;
       justify-content: right;
     }
-    .nav-item:first-of-type:not(.mobilenavone){
-      width:auto;
-      padding:0;
-    }
-    .nav-item{
-        font-size: 0.6875rem;
-        letter-spacing: 0.0625rem;
-        border:none;
-        width:auto;
-        margin:1rem;
-        padding:0;
-    }
+#logo{
+  width:auto;
+  padding:0;
+ }
+ .nav-item{
+  font-size: 0.6875rem;
+  letter-spacing: 0.0625rem;
+  border:none;
+  width:auto;
+  margin:1rem;
+  padding:0;
+}
     .nav-item::before{
       content:'';
       display: none;
@@ -269,28 +268,28 @@ top:-3rem;
     .nav-link{
       padding:0;
     }
-.nav-item:nth-child(2):hover {
+.nav-item:nth-child(1):hover:not(#logo) {
    box-shadow: 0 -1px 0 var(--lightblue);
 }
-.nav-item:nth-child(3):hover {
+.nav-item:nth-child(2):hover {
   box-shadow: 0 -1px 0 var(--yellow);
 }
-.nav-item:nth-child(4):hover {
+.nav-item:nth-child(3):hover {
   box-shadow: 0 -1px 0 var(--purple);
 }
-.nav-item:nth-child(5):hover {
+.nav-item:nth-child(4):hover {
   box-shadow: 0 -1px 0 var(--burnorgange);
 }
-.nav-item:nth-child(6):hover {
+.nav-item:nth-child(5):hover {
   box-shadow: 0 -1px 0 var(--red);
 }
-.nav-item:nth-child(7):hover {
+.nav-item:nth-child(6):hover {
   box-shadow: 0 -1px 0 var(--organge);
 }
-.nav-item:nth-child(8):hover {
+.nav-item:nth-child(7):hover {
   box-shadow: 0 -1px 0 var(--turqoist);
 }
-.nav-item:nth-child(9):hover {
+.nav-item:nth-child(8):hover {
   box-shadow: 0 -1px 0 var(--blue);
 }
         /* body */
@@ -312,7 +311,7 @@ top:-3rem;
 .sliderinfo{
   grid-area: 1 / 2 / 1 / 2;
   text-align: left;
-  margin:auto 7rem ;
+  margin:auto 7rem;
  }
  .carousel-item{
   width:40rem;
@@ -342,8 +341,7 @@ top:-3rem;
    height: 30dvh;
    display: flex;
    flex-direction: column;
- }
- .carousel-indicators [data-bs-target] {
+ } .carousel-indicators [data-bs-target] {
     margin: .5rem auto;
     width: 21.875rem;
     height: 3rem;
@@ -382,11 +380,11 @@ top:-3rem;
 .carousel-indicators [data-bs-target]:nth-child(3)::after {
   content: '03 surface geology';
 }
-.tab-pane:nth-child(3) {
+
+.tab-content > .active:nth-child(3n) {
   grid-area: 2 / 1 / 2 / 3;
   display: flex;
-  margin: auto;
-  height:fit-content;
+  margin: auto ;
   gap:2rem;
 }
  .planetfacts div{
