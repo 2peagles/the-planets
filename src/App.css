@@ -165,6 +165,17 @@ left:-1.5rem;
     letter-spacing: 0.0625rem;
     text-transform: uppercase;
   }
+  .planetslider{
+    /* width:96%; */
+    padding:0 .6rem 6rem;
+    display: grid;
+    place-content: center;
+    justify-content:space-between;
+  }
+  .planetinfo a {
+    color:#fff;
+    text-decoration: none;
+  }
 /* body */
 /* 
 @media (width < 790)  {
@@ -277,9 +288,10 @@ left:-1.5rem;
    display:block;
    margin:auto;
    max-width: 80%;
+   padding:3rem 0;
  }
 .planetinfo{
-  width: 21.875rem;
+  width: 22.875rem;
   display: grid;
 }
 .planetinfo h1{

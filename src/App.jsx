@@ -25,9 +25,9 @@ function App() {
           <div className='menu mobile'>
             <button onClick={handleClick} className='menubtn'>
               {!menu ? (
-                <img src='/img/Group.svg' alt='open main menu' />
+                <img src='assets/Group.svg' alt='open main menu' />
               ) : (
-                <img src='/img/icon-hamburger.svg' alt='close main menu' />
+                <img src='assets/icon-hamburger.svg' alt='close main menu' />
               )}
             </button>
           </div>
@@ -49,10 +49,10 @@ function App() {
                   <>
                     <Tab.Pane eventKey={planet.name} className='planetslider'>
                       <div>
-                        <div key={planet.name}>
+                        <div key={planet.name} className='planetimgs'>
                           <img src={selectedImage} alt='Planet' className='visibleimg' />
-                          <img src={selectedImage} alt='Internal Structure' />
-                          <img src={selectedImage} alt='Geology' />
+                          {/* <img src={selectedImage} alt='Internal Structure' />
+                          <img src={selectedImage} alt='Geology' /> */}
                         </div>
                       </div>
                       <div className='planetinfo'>
@@ -62,9 +62,9 @@ function App() {
                           {selectedButton === 2 && <p>{planet.structure.content}</p>}
                           {selectedButton === 3 && <p>{planet.geology.content}</p>}
 
-                           {selectedButton === 1 && <a href={planet.overview.source} target="_blank"  rel="noreferrer" > <img src='/assets/icon-source.svg' alt='overview' /></a>}
-                          {selectedButton === 2 && <a href={planet.structure.source}  target="_blank"  rel="noreferrer" > <img src='/assets/icon-source.svg' alt='overview' /></a>}
-                          {selectedButton === 3 && <a href={planet.geology.source} target="_blank" rel="noreferrer">  <img src='/assets/icon-source.svg' alt='overview' /></a>}
+                          {selectedButton === 1 && <a href={planet.overview.source} target="_blank"  rel="noreferrer" > Wikipedia <img src='/assets/icon-source.svg' alt='overview source' /> </a>}
+                          {selectedButton === 2 && <a href={planet.structure.source}  target="_blank"  rel="noreferrer" >  Wikipedia <img src='/assets/icon-source.svg' alt='structure source' /></a>}
+                          {selectedButton === 3 && <a href={planet.geology.source} target="_blank" rel="noreferrer">   Wikipedia <img src='/assets/icon-source.svg' alt='geology source' /></a>}
                         </div>
                         <button
                           onClick={() => handleButtonClick(1, planet.images.planet)}
